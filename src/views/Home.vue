@@ -760,123 +760,28 @@
             </ul>
 
             <p class="text-alt">
-              <small>All Rights Reserved © 2020</small>
+              <small>All Rights Reserved © NET-Baires 2020</small>
             </p>
           </div>
         </div>
       </div>
     </section>
-
-    <div
-      class="modal-window"
-      data-modal="email-ticket"
-      style="background-color: rgba(2, 2, 2, 0.85);"
-    >
-      <div
-        class="modal-box small animated"
-        data-animation="zoomIn"
-        data-duration="700"
-      >
-        <span class="close-btn icon icon-office-52"></span>
-
-        <h5 class="align-center">
-          <span class="highlight">Event Registration</span>
-        </h5>
-
-        <form class="form registration-form align-center">
-          <fieldset class="col-sm-12">
-            <label for="first_name">First Name</label>
-            <input id="first_name" name="first_name" type="text" />
-          </fieldset>
-
-          <fieldset class="col-sm-12">
-            <label for="last_name">Last Name</label>
-            <input id="last_name" name="last_name" type="text" />
-          </fieldset>
-
-          <fieldset class="col-sm-12">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" />
-          </fieldset>
-
-          <fieldset class="col-sm-6">
-            <label for="pass1">Ticket type</label>
-            <select id="pass1" name="pass1">
-              <option value selected disabled>-- Select --</option>
-              <option value="0">Early Bird</option>
-              <option value="1">Silver Pass</option>
-              <option value="2">Gold Pass</option>
-              <option value="3">Ultimate Mega Ultra Legendary Pass</option>
-            </select>
-          </fieldset>
-
-          <fieldset class="col-sm-6">
-            <label for="pass2"># tickets</label>
-            <select id="pass2" name="pass2">
-              <option value="a">Variant A</option>
-              <option value="b">Variant B</option>
-              <option value="c">Variant C</option>
-              <option value="d">Variant D</option>
-              <option value="e">Variant E</option>
-              <option value="f" disabled>Variant F</option>
-              <option value="g">Variant G</option>
-              <option value="h">Variant H</option>
-              <option value="i">Variant I</option>
-              <option value="j">Variant J</option>
-              <option value="k">Variant K</option>
-              <option value="l">Variant L</option>
-              <option value="m">Variant M</option>
-            </select>
-          </fieldset>
-
-          <fieldset class="col-sm-12">
-            <input id="privacy" name="privacy" type="checkbox" />
-            <label for="privacy">
-              I read & agree with
-              <a href="#">Terms of service</a>
-            </label>
-            <br />
-            <br />
-          </fieldset>
-
-          <input type="submit" value="submit" class="btn" />
-        </form>
-      </div>
-    </div>
-
-    <div
-      class="modal-window"
-      data-modal="0"
-      style="background-color: rgba(2, 2, 2, 0.85);"
-    >
-      <div class="modal-box iframe-box iframe-video">
-        <span class="close-btn icon icon-office-52"></span>
-
-        <iframe
-          src="https://www.youtube.com/embed/goH-Pv1w6xo?rel=0&amp;showinfo=0"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-
 export default {
   name: "Home",
   data: function() {
     return {
       register: {
-        url: "http://jornadadearquitectura.net/coming-soon.html",
+        url: "/coming-soon",
       },
       speakers: {
         talk: {
           text: "Propone tu charla",
-          url:
-            "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAP8JX3NUM0NZSDJHVlpCUzVDQU1HNlVESUM2Tk9ZWC4u",
+          url: "https://sessionize.com/4-jornada-de-arquitectura-net/",
           enable: true,
         },
         enableList: true,
@@ -946,8 +851,29 @@ export default {
             alt: "",
             url: "https://www.hexacta.com/",
           },
+          {
+            name: "Cognizant Softvision",
+            image: "assets/img/sponsors/softvision.png",
+            alt:
+              "Somos una compañía global con más de 20 años de experiencia en el mundo digital diseñando y construyendo productos innovadores y soluciones disruptivas para clientes internacionales.",
+            url: "https://www.cognizantsoftvision.com/",
+          },
         ],
-        smaller: [],
+        smaller: [
+          {
+            name: "Microsoft User Group",
+            image: "assets/img/sponsors/mug.png",
+            alt: "Microsoft User Group",
+            url: "https://mug-it.org.ar",
+          },
+          {
+            name: "Globalogic",
+            image: "assets/img/sponsors/globalogic.png",
+            alt:
+              "En GlobalLogic creamos productos digitales combinando nuestra experiencia en diseño e ingeniería compleja para ayudar a nuestros clientes a imaginar lo imposible y acelerar su transición a los negocios digitales del futuro.",
+            url: "https://www.globallogic.com/latam/",
+          },
+        ],
         becomeInSponsor: {
           text: "Convertite en Sponsor",
           url: "mailto: info@net-baires.com.ar",
@@ -958,7 +884,7 @@ export default {
         url: "mailto: info@net-baires.com.ar",
       },
       schedule: {
-        enable: true,
+        enable: false,
         list: [
           {
             day: {

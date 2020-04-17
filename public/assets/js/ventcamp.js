@@ -5,10 +5,10 @@
  *
  */
 
-var Ventcamp;
+let Ventcamp;
 
-(function ($) {
-  $(document).on("ready", function () {
+(function($) {
+  $(document).on("ready", function() {
     Ventcamp.init();
   });
 })(jQuery);
@@ -33,20 +33,20 @@ Ventcamp = {
 
   mobileDevice: false,
 
-  log: function (msg) {
+  log: function(msg) {
     if (this.options.log)
       console.log("%cStartupLy Log: " + msg, "color: #1ac6ff");
   },
 
-  buildStyleSwitcher: function () {
-    var template =
+  buildStyleSwitcher: function() {
+    const template =
       '<div class="style-switcher"><a href="#" class="style-toggle"><i class="fa fa-cog"></i></a><h6>Color palette</h6><ul class="template-set-color"><li><a data-color="Blue" class="color blue" href="#" title="style"></a></li><li><a data-color="Pink" class="color pink" href="#" title="main-pink"></a></li><li><a data-color="Green" class="color green" href="#" title="main-green"></a></li><li><a data-color="Berry" class="color berry" href="#" title="main-berry"></a></li><li><a data-color="Orange" class="color orange" href="#" title="main-orange"></a></li></ul><div class="template-animations-switch"><h6>Animations</h6><input id="animations_switch" type="checkbox" checked="checked" /><label for="animations_switch"><i></i></label></div></div>';
 
     $("body").append(template);
   },
 
   // check if site is laoded from mobile device
-  checkMobile: function () {
+  checkMobile: function() {
     mobileDeviceOld = this.mobileDevice;
 
     if (
@@ -66,8 +66,8 @@ Ventcamp = {
   },
 
   // init animations on page
-  initAnimations: function () {
-    var _this = this;
+  initAnimations: function() {
+    const _this = this;
 
     if (this.mobileDevice || !this.options.animations) {
       $(".animated").css("opacity", 1);
@@ -76,15 +76,15 @@ Ventcamp = {
 
       $(".animated .counter-block .count")
         .not(".countdown .counter-block  .count")
-        .each(function () {
+        .each(function() {
           $(this).text($(this).data("to"));
         });
     } else if (typeof $.fn.appear == "function") {
       this.log("Init animations");
 
       $(".animated").appear(
-        function () {
-          var $el = $(this),
+        function() {
+          const $el = $(this),
             animation = $el.data("animation"),
             animationDelay = $el.data("delay") || 0,
             animationDuration = $el.data("duration") || 1000;
@@ -111,7 +111,7 @@ Ventcamp = {
 
             $el.one(
               "webkitAnimationStart mozAnimationStart MSAnimationStart oanimationstart animationstart",
-              function () {
+              function() {
                 if (!$el.closest(".coundown").length) {
                   if (typeof $.fn.countTo == "function") {
                     if ($el.find(".count").length) $el.find(".count").countTo();
@@ -152,30 +152,38 @@ Ventcamp = {
         .not(".animated")
         .not(".animated .counter-block")
         .not(".countdown .counter-block")
-        .each(function () {
+        .each(function() {
           if (
             typeof $.fn.appear == "function" &&
             typeof $.fn.countTo == "function"
           ) {
-            $(this).appear(function () {
-              $(this).find(".count").countTo();
+            $(this).appear(function() {
+              $(this)
+                .find(".count")
+                .countTo();
             });
           } else {
-            $(this).find(".count").text($(this).find(".count").data("to"));
+            $(this)
+              .find(".count")
+              .text(
+                $(this)
+                  .find(".count")
+                  .data("to")
+              );
           }
         });
     }
   },
 
-  calculateMenuSizes: function () {
-    var _this = this,
+  calculateMenuSizes: function() {
+    const _this = this,
       $dropdownItem = $(".navigation-item.dropdown"),
       $navbarCollapse = $(".navbar-collapse"),
       winHeight = window.innerHeight;
 
     if ($dropdownItem.length) {
-      $dropdownItem.each(function () {
-        var $this = $(this),
+      $dropdownItem.each(function() {
+        const $this = $(this),
           $dropdown = $this.find(".dropdown-menu"),
           headerHeight = $dropdownItem.closest("header").outerHeight();
 
@@ -188,9 +196,11 @@ Ventcamp = {
     }
 
     if ($navbarCollapse.length) {
-      $navbarCollapse.each(function () {
+      $navbarCollapse.each(function() {
         if (_this.mobileDevice) {
-          var headerHeight = $(this).closest("header").outerHeight();
+          const headerHeight = $(this)
+            .closest("header")
+            .outerHeight();
 
           $(this).css("max-height", winHeight - headerHeight);
         }
@@ -198,12 +208,12 @@ Ventcamp = {
     }
   },
 
-  windowHeightBlock: function () {
-    var $blocks = $(".window-height"),
+  windowHeightBlock: function() {
+    const $blocks = $(".window-height"),
       height = window.innerHeight;
 
     if ($blocks.length) {
-      $blocks.each(function () {
+      $blocks.each(function() {
         $(this).css("min-height", height);
       });
     }
@@ -211,12 +221,12 @@ Ventcamp = {
     this.log("Init window height blocks");
   },
 
-  centeredBlock: function () {
-    var $blocks = $(".centered-block");
+  centeredBlock: function() {
+    const $blocks = $(".centered-block");
 
     if ($blocks.length) {
-      $blocks.each(function () {
-        var $el = $(this),
+      $blocks.each(function() {
+        const $el = $(this),
           $parent = $el.parent(),
           elHeight = $el.outerHeight(),
           parentHeight = $parent.outerHeight(),
@@ -231,11 +241,11 @@ Ventcamp = {
     this.log("Init centered blocks");
   },
 
-  videoBackgroundInit: function () {
-    var _this = this;
+  videoBackgroundInit: function() {
+    const _this = this;
 
-    $(".ytp-player-background").each(function () {
-      var $el = $(this),
+    $(".ytp-player-background").each(function() {
+      let $el = $(this),
         $player,
         controlsTempalte;
 
@@ -266,23 +276,23 @@ Ventcamp = {
     });
   },
 
-  initPseudoSelect: function () {
-    var $select = $("select");
+  initPseudoSelect: function() {
+    const $select = $("select");
 
     if ($select.length) {
       $select.each(this.makePseudoSelect);
     }
   },
 
-  makePseudoSelect: function (i, el) {
-    var $el = $(el),
+  makePseudoSelect: function(i, el) {
+    const $el = $(el),
       $options = $el.find("option"),
       $pseudoSelect = $('<div class="pseudo-select"></div>'),
       $input = $('<input type="text" />'),
       $field = $('<span class="pseudo-select-field"></span>'),
       $dropdown = $('<ul class="pseudo-select-dropdown"></ul>');
 
-    $options.each(function () {
+    $options.each(function() {
       $li = $('<li class="pseudo-select-dropdown-item"></li>');
       $li.data("value", this.value);
       $li.text(this.text);
@@ -299,22 +309,25 @@ Ventcamp = {
 
     $el.after($pseudoSelect);
     $input.attr({ id: el.id, name: el.name });
-    $pseudoSelect.append($input).append($field).append($dropdown);
+    $pseudoSelect
+      .append($input)
+      .append($field)
+      .append($dropdown);
 
     $el.remove();
 
-    var closePseudoSelect = function () {
+    const closePseudoSelect = function() {
         $dropdown.stop(true, true).slideUp(150);
-        setTimeout(function () {
+        setTimeout(function() {
           $el.removeClass("open");
         }, 150);
       },
-      openPseudoSelect = function () {
+      openPseudoSelect = function() {
         $el.addClass("open");
         $dropdown.stop(true, true).slideDown(250);
       },
-      selectItem = function ($li) {
-        var value = $li.data("value"),
+      selectItem = function($li) {
+        const value = $li.data("value"),
           text = $li.text(),
           dropdownHeight = $dropdown.outerHeight(),
           elHeight = $li.outerHeight(),
@@ -329,7 +342,10 @@ Ventcamp = {
           $dropdown.scrollTop(scrollTop + elemPosition);
         }
 
-        $li.addClass("selected").siblings("li").removeClass("selected");
+        $li
+          .addClass("selected")
+          .siblings("li")
+          .removeClass("selected");
         $input.val(value);
         $field.text(text);
         $input.trigger("change");
@@ -338,10 +354,10 @@ Ventcamp = {
     $input.on("focus.pseudoSelect", openPseudoSelect);
     $input.on("blur.pseudoSelect", closePseudoSelect);
 
-    $input.on("keydown", function (event) {
-      var $li = $dropdown.find("li").not(".disabled"),
+    $input.on("keydown", function(event) {
+      const $li = $dropdown.find("li").not(".disabled"),
         $liSelected = $dropdown.find("li.selected").not(".disabled"),
-        index = $.map($li, function (el, i) {
+        index = $.map($li, function(el, i) {
           if ($(el).is(".selected")) {
             return i;
           }
@@ -377,18 +393,18 @@ Ventcamp = {
       }
     });
 
-    $field.on("click.pseudoSelect", function (event) {
+    $field.on("click.pseudoSelect", function(event) {
       event.preventDefault();
 
       if (!$el.is(".open")) $input.trigger("focus");
     });
 
-    $("body").on("click.pseudoSelect", function (event) {
+    $("body").on("click.pseudoSelect", function(event) {
       if (!$(event.target).closest($field).length && $el.is(".open"))
         closePseudoSelect();
     });
 
-    $dropdown.on("mousedown.pseudoSelect click.pseudoSelect", "li", function (
+    $dropdown.on("mousedown.pseudoSelect click.pseudoSelect", "li", function(
       event
     ) {
       event.preventDefault();
@@ -401,13 +417,13 @@ Ventcamp = {
   },
 
   // Tabs view
-  tabNavToSelect: function () {
+  tabNavToSelect: function() {
     $nav = $(".nav");
 
-    var _this = this;
+    const _this = this;
 
-    $nav.each(function () {
-      var $this = $(this),
+    $nav.each(function() {
+      const $this = $(this),
         $active = $this.find("li.active > a"),
         $field = $('<span class="nav-current">' + $active.html() + "</span>");
 
@@ -415,28 +431,38 @@ Ventcamp = {
 
       $this.before($field);
 
-      $field.on("click", function () {
+      $field.on("click", function() {
         if (!$this.is(".open"))
-          $this.stop(true, true).slideDown(250).addClass("open");
-        else $this.stop(true, true).slideUp(150).removeClass("open");
+          $this
+            .stop(true, true)
+            .slideDown(250)
+            .addClass("open");
+        else
+          $this
+            .stop(true, true)
+            .slideUp(150)
+            .removeClass("open");
       });
 
-      $this.on("click", "a", function () {
+      $this.on("click", "a", function() {
         $field.html($(this).html());
       });
 
-      $("body").on("click", function (event) {
+      $("body").on("click", function(event) {
         $target = $(event.target);
 
         if (!$target.closest($field).length && $this.is(".open")) {
-          $this.stop(true, true).slideUp(150).removeClass("open");
+          $this
+            .stop(true, true)
+            .slideUp(150)
+            .removeClass("open");
         }
       });
     });
   },
 
-  formInit: function () {
-    var _this = this;
+  formInit: function() {
+    const _this = this;
 
     this.log("Init ajaxed forms.");
 
@@ -448,10 +474,10 @@ Ventcamp = {
       this.log("Can't find toastr. Form messages in alerts.");
     }
 
-    var validateOptions, submitHandler, doneHandler, failHandler;
+    let validateOptions, submitHandler, doneHandler, failHandler;
 
-    submitHandler = function (event) {
-      var form = this;
+    submitHandler = function(event) {
+      const form = this;
 
       event.preventDefault();
 
@@ -460,10 +486,10 @@ Ventcamp = {
         type: "POST",
         data: $(form).serialize(),
       })
-        .done(function (msg) {
+        .done(function(msg) {
           doneHandler(msg, form);
         })
-        .fail(function () {
+        .fail(function() {
           failHandler(form);
         });
     };
@@ -493,8 +519,8 @@ Ventcamp = {
         },
       },
 
-      submitHandler: function (form) {
-        var $input = $(form).find('input[type="submit"]'),
+      submitHandler: function(form) {
+        const $input = $(form).find('input[type="submit"]'),
           $button = $(form).find('button[type="submit"]');
 
         if ($button.length) {
@@ -508,20 +534,24 @@ Ventcamp = {
           type: "POST",
           data: $(form).serialize(),
         })
-          .done(function (msg) {
-            $(form).find(".loading").remove();
+          .done(function(msg) {
+            $(form)
+              .find(".loading")
+              .remove();
 
             doneHandler(msg, form);
           })
-          .fail(function () {
-            $(form).find(".loading").remove();
+          .fail(function() {
+            $(form)
+              .find(".loading")
+              .remove();
 
             failHandler(form);
           });
       },
     };
 
-    doneHandler = function (msg, form) {
+    doneHandler = function(msg, form) {
       if (msg === "ok") {
         form.reset();
 
@@ -536,17 +566,21 @@ Ventcamp = {
       }
     };
 
-    failHandler = function () {
+    failHandler = function() {
       if (typeof toastr != "undefined")
         toastr.error("An error occured. Please try again later.");
       else alert("An error occured. Please try again later.");
     };
 
-    if ($("form").not(".mailchimp-form").not(".disable-ajax-form").length) {
+    if (
+      $("form")
+        .not(".mailchimp-form")
+        .not(".disable-ajax-form").length
+    ) {
       $("form")
         .not(".mailchimp-form")
         .not(".disable-ajax-form")
-        .each(function () {
+        .each(function() {
           if (typeof $.fn.validate == "function") {
             $(this).validate(validateOptions);
           } else {
@@ -558,11 +592,11 @@ Ventcamp = {
     }
 
     if ($(".mailchimp-form").length) {
-      $(".mailchimp-form").each(function () {
-        $(this).on("submit", function (event) {
+      $(".mailchimp-form").each(function() {
+        $(this).on("submit", function(event) {
           event.preventDefault();
 
-          var $form = $(this),
+          let $form = $(this),
             $input = $form.find('input[type="submit"]'),
             $button = $form.find('button[type="submit"]'),
             $fullnameField = "",
@@ -598,7 +632,7 @@ Ventcamp = {
               "&lname=" +
               last_name,
 
-            success: function (msg) {
+            success: function(msg) {
               $form.find(".loading").remove();
 
               if (msg.indexOf("Success") != -1) {
@@ -618,16 +652,16 @@ Ventcamp = {
   },
 
   // Google map
-  initGoogleMap: function () {
-    var _this = this;
+  initGoogleMap: function() {
+    const _this = this;
 
     if ($(".map").length) {
-      $(".map").each(function () {
-        var mapEl = this;
+      $(".map").each(function() {
+        const mapEl = this;
 
-        var map, marker, geocoder, service;
+        let map, marker, geocoder, service;
 
-        var icon = "/assets/img/marker-46x46.png",
+        let icon = "/assets/img/marker-46x46.png",
           address,
           markerLatLng,
           offsetX,
@@ -651,7 +685,7 @@ Ventcamp = {
             position: markerLatLng,
           });
 
-          map.addListener("projection_changed", function () {
+          map.addListener("projection_changed", function() {
             centerMap(map, offsetX, offsetY, relativeOffset);
           });
 
@@ -662,8 +696,8 @@ Ventcamp = {
           service = new google.maps.places.PlacesService(map);
 
           if (balloons) {
-            for (var i = 0; i < balloons.length; i++) {
-              var balloon = balloons[i];
+            for (let i = 0; i < balloons.length; i++) {
+              const balloon = balloons[i];
 
               if (typeof balloon == "string") {
                 service.textSearch(
@@ -672,7 +706,7 @@ Ventcamp = {
                     radius: 5000,
                     query: balloon,
                   },
-                  function (results, status) {
+                  function(results, status) {
                     if (status == google.maps.places.PlacesServiceStatus.OK) {
                       for (var i = 0, place; (place = results[i]); i++) {
                         service.getDetails(
@@ -690,7 +724,7 @@ Ventcamp = {
 
         function createMarkers(place, status) {
           if (status == google.maps.places.PlacesServiceStatus.OK) {
-            var innerContent;
+            let innerContent;
 
             innerContent =
               '<div class="balloon"><strong class="name">' +
@@ -700,7 +734,7 @@ Ventcamp = {
             if (place.rating) {
               innerContent += '<ul class="list-inline rating">';
 
-              for (var i = 0; i < Math.floor(place.rating); i++) {
+              for (let i = 0; i < Math.floor(place.rating); i++) {
                 innerContent += '<li><span class="fa fa-star"></span></li>';
               }
 
@@ -719,7 +753,7 @@ Ventcamp = {
 
             innerContent += "</div>";
 
-            var infowindow = new google.maps.InfoWindow({
+            const infowindow = new google.maps.InfoWindow({
               position: place.geometry.location,
               maxWidth: 200,
               content: innerContent,
@@ -793,7 +827,7 @@ Ventcamp = {
           if (typeof markerLatLng == "object") {
             createMap();
           } else if (typeof address == "string") {
-            geocoder.geocode({ address: address }, function (results, status) {
+            geocoder.geocode({ address: address }, function(results, status) {
               markerLatLng = results[0].geometry.location;
 
               createMap();
@@ -822,10 +856,10 @@ Ventcamp = {
   },
 
   // count down timer
-  countdownInit: function () {
+  countdownInit: function() {
     if ($(".countdown").length) {
       if (typeof $.fn.countdown == "function") {
-        var futureDate = new Date(2020, 4, 10, 12, 0, 0);
+        const futureDate = new Date(2020, 4, 10, 12, 0, 0);
         $countdown = $(".countdown");
 
         // count down 10 days from today
@@ -845,18 +879,18 @@ Ventcamp = {
     }
   },
 
-  masonryInit: function () {
-    var _this = this;
+  masonryInit: function() {
+    const _this = this;
 
     if ($(".masonry").length && typeof $.fn.masonry == "function") {
-      $(".masonry").each(function () {
-        var $container = $(this);
+      $(".masonry").each(function() {
+        const $container = $(this);
 
         $container.masonry({
           itemSelector: ".masonry-item",
           isAnimated: true,
 
-          columnWidth: function (containerWidth) {
+          columnWidth: function(containerWidth) {
             if (containerWidth > 720) {
               $container.removeClass("width400").removeClass("width720");
               return containerWidth / 4;
@@ -875,20 +909,20 @@ Ventcamp = {
     }
   },
 
-  gallerySliderInit: function () {
-    var _this = this;
+  gallerySliderInit: function() {
+    const _this = this;
 
     if (
       $(".gallery.light-slider").length &&
       typeof $.fn.bxSlider == "function"
     ) {
-      $(".gallery.light-slider").each(function () {
-        var $container = $(this),
+      $(".gallery.light-slider").each(function() {
+        const $container = $(this),
           $imgSLider = $container.find(".img-slider"),
           $descrSlider = $container.find(".description-slider");
 
-        $imgSLider.find("li > img").each(function () {
-          var $this = $(this),
+        $imgSLider.find("li > img").each(function() {
+          const $this = $(this),
             $li = $this.parent(),
             imgSrc = $this.attr("src");
 
@@ -900,11 +934,11 @@ Ventcamp = {
 
         if ($imgSLider.length && $descrSlider.length) {
           function countImgMinHeight($slide) {
-            var img = new Image();
+            const img = new Image();
 
             img.src = $slide.data("imgSrc");
 
-            img.onload = function () {
+            img.onload = function() {
               height = (this.height * $slide.outerWidth()) / this.width;
               $imgSLider.css("min-height", height);
 
@@ -920,14 +954,14 @@ Ventcamp = {
             mode: "fade",
             adaptiveHeight: true,
 
-            onSliderLoad: function (currentIndex) {
+            onSliderLoad: function(currentIndex) {
               $slide = $imgSLider.find("> li").eq(currentIndex);
 
               height = countImgMinHeight($slide);
               console.log(height);
             },
 
-            onSlideBefore: function ($slide) {
+            onSlideBefore: function($slide) {
               countImgMinHeight($slide);
             },
           });
@@ -936,7 +970,7 @@ Ventcamp = {
             controls: false,
             adaptiveHeight: true,
 
-            onSlideBefore: function ($slideElement, oldIndex, newIndex) {
+            onSlideBefore: function($slideElement, oldIndex, newIndex) {
               $imgSLider.goToSlide(newIndex);
             },
           });
@@ -946,16 +980,16 @@ Ventcamp = {
   },
 
   //sticky menu initialization
-  stickMenu: function () {
-    var $header = $("header");
+  stickMenu: function() {
+    const $header = $("header");
 
     $header.css("min-height", $header.height());
     $header.addClass("fixed");
     $(".fade-in-on-stick").fadeIn();
   },
 
-  unstickMenu: function () {
-    var $header = $("header");
+  unstickMenu: function() {
+    const $header = $("header");
 
     $header.removeClass("fixed");
     $header.css("min-height", "");
@@ -963,18 +997,18 @@ Ventcamp = {
   },
 
   //one page menu navigation
-  onePageNavInit: function () {
-    var _this = this;
+  onePageNavInit: function() {
+    const _this = this;
 
     if (typeof $.fn.waypoint != "undefined") {
-      var $menuLinks = $(".navigation-list a")
+      const $menuLinks = $(".navigation-list a")
           .not('[href="#"]')
-          .filter(function () {
+          .filter(function() {
             return /#\w+/.test(this.href);
           }),
-        enterHandler = function (that, direction) {
-          var id = that.id,
-            $item = $(".navigation-list a").filter(function () {
+        enterHandler = function(that, direction) {
+          const id = that.id,
+            $item = $(".navigation-list a").filter(function() {
               return this.href.indexOf("#" + that.id) > -1;
             });
 
@@ -990,22 +1024,22 @@ Ventcamp = {
             }
           }
         },
-        leaveHandler = function (that, direction) {
-          var $item = $(".navigation-list a").filter(function () {
+        leaveHandler = function(that, direction) {
+          const $item = $(".navigation-list a").filter(function() {
             return this.href.indexOf("#" + that.id) > -1;
           });
 
           $item.removeClass("active");
         };
 
-      $menuLinks.each(function (index) {
-        var href = this.href,
+      $menuLinks.each(function(index) {
+        const href = this.href,
           anchorId = href.substring(href.indexOf("#"), href.length),
           $block = $(anchorId);
 
         if ($block.length) {
           $block.waypoint(
-            function (direction) {
+            function(direction) {
               if (direction == "down") {
                 enterHandler(this.element, direction);
               }
@@ -1014,7 +1048,7 @@ Ventcamp = {
           );
 
           $block.waypoint(
-            function (direction) {
+            function(direction) {
               if (direction == "down") {
                 leaveHandler(this.element, direction);
               } else {
@@ -1025,7 +1059,7 @@ Ventcamp = {
           );
 
           $block.waypoint(
-            function (direction) {
+            function(direction) {
               if (direction == "up") {
                 leaveHandler(this.element, direction);
               }
@@ -1036,8 +1070,8 @@ Ventcamp = {
       });
 
       $("body").waypoint(
-        function () {
-          var id = "hero",
+        function() {
+          const id = "hero",
             $item = $('.navigation-list a[href="#' + id + '"]');
 
           $(".navigation-list .active").removeClass("active");
@@ -1057,8 +1091,8 @@ Ventcamp = {
         { offset: -100 }
       );
 
-      $("body").on("click", 'a[href*="#"]', function (event) {
-        var href = $(this).attr("href"),
+      $("body").on("click", 'a[href*="#"]', function(event) {
+        const href = $(this).attr("href"),
           anchorId = href.substring(href.indexOf("#"), href.length);
 
         if ($(this).attr("data-toggle") && $(this).attr("data-toggle").length) {
@@ -1077,8 +1111,8 @@ Ventcamp = {
   },
 
   //custom smooth scrolling for all onpage anchors
-  anchorClickHandler: function (anchorId) {
-    var _this = this,
+  anchorClickHandler: function(anchorId) {
+    const _this = this,
       offsetTop = $(anchorId).offset().top - $(".header").height(),
       $nav = $(".navigation-list"),
       $elems = $nav.find('a[href="' + anchorId + '"]');
@@ -1088,7 +1122,7 @@ Ventcamp = {
         scrollTop: offsetTop,
       },
       450,
-      function () {
+      function() {
         if (_this.options.onePageNavHashChange) {
           if (history.pushState) {
             history.pushState(null, null, anchorId);
@@ -1103,9 +1137,9 @@ Ventcamp = {
     );
   },
 
-  checkHeaderStatus: function () {
+  checkHeaderStatus: function() {
     if ($("header").length) {
-      var $header = $("header"),
+      const $header = $("header"),
         scrollTop = $(window).scrollTop(),
         headerTop = $header.offset().top;
 
@@ -1118,7 +1152,7 @@ Ventcamp = {
   },
 
   //onload handler
-  windowLoadHeandler: function (event) {
+  windowLoadHeandler: function(event) {
     this.log("Window load handler");
 
     if (window.location.hash.length) {
@@ -1137,7 +1171,7 @@ Ventcamp = {
   },
 
   //on resize handler
-  windowResizeHandler: function (event) {
+  windowResizeHandler: function(event) {
     this.checkMobile();
 
     this.windowHeightBlock();
@@ -1148,14 +1182,14 @@ Ventcamp = {
   },
 
   //on scroll handler
-  windowScrollHandler: function (event) {
+  windowScrollHandler: function(event) {
     this.checkHeaderStatus();
   },
 
-  styleSwitcherHandler: function (event, $el) {
+  styleSwitcherHandler: function(event, $el) {
     event.preventDefault();
 
-    var switcher = $(".style-switcher");
+    const switcher = $(".style-switcher");
 
     if (switcher.hasClass("style-active")) {
       switcher.animate({ marginLeft: "0" }, 200, "linear");
@@ -1166,8 +1200,8 @@ Ventcamp = {
     switcher.toggleClass("style-active");
   },
 
-  styleSwitcherColorHandler: function (event, $el) {
-    var $this = $el,
+  styleSwitcherColorHandler: function(event, $el) {
+    const $this = $el,
       colorName = $this.attr("data-color");
 
     event.preventDefault();
@@ -1180,7 +1214,7 @@ Ventcamp = {
     );
   },
 
-  styleSwitcherToggleAnimation: function (event, $el) {
+  styleSwitcherToggleAnimation: function(event, $el) {
     if ($el.get(0).checked) {
       $(".animated").css("opacity", "");
       this.options.animations = true;
@@ -1191,7 +1225,7 @@ Ventcamp = {
   },
 
   //small back-to-top link function
-  backToTopHandler: function () {
+  backToTopHandler: function() {
     $("html, body").animate(
       {
         scrollTop: 0,
@@ -1201,30 +1235,30 @@ Ventcamp = {
     );
   },
 
-  setEventHandlers: function () {
-    var _this = this;
+  setEventHandlers: function() {
+    const _this = this;
 
-    $(window).on("load", function (event) {
+    $(window).on("load", function(event) {
       _this.windowLoadHeandler(event);
     });
 
-    $(window).on("resize", function (event) {
+    $(window).on("resize", function(event) {
       _this.windowResizeHandler(event);
     });
 
-    $(window).on("scroll", function (event) {
+    $(window).on("scroll", function(event) {
       _this.windowScrollHandler(event);
     });
 
-    $(".back-to-top").on("click", function (event) {
+    $(".back-to-top").on("click", function(event) {
       event.preventDefault();
 
       _this.backToTopHandler();
     });
 
-    $(".navbar-collapse").on("mousewheel DOMMouseScroll", function (event) {
+    $(".navbar-collapse").on("mousewheel DOMMouseScroll", function(event) {
       if (_this.mobileDevice) {
-        var e0 = event.originalEvent,
+        const e0 = event.originalEvent,
           delta = e0.wheelDelta || -e0.detail;
 
         this.scrollTop -= delta;
@@ -1232,27 +1266,29 @@ Ventcamp = {
       }
     });
 
-    $(".style-toggle").on("click", function (event) {
+    $(".style-toggle").on("click", function(event) {
       _this.styleSwitcherHandler(event, $(this));
     });
 
-    $(".style-switcher .color").on("click", function (event) {
+    $(".style-switcher .color").on("click", function(event) {
       _this.styleSwitcherColorHandler(event, $(this));
     });
 
-    $("#animations_switch").on("change", function (event) {
+    $("#animations_switch").on("change", function(event) {
       _this.styleSwitcherToggleAnimation(event, $(this));
     });
 
     this.log("Set event hendlers");
   },
 
-  hidePreloader: function (callback) {
-    var _this = this;
+  hidePreloader: function(callback) {
+    const _this = this;
 
-    $(".preloader-mask").delay(500).fadeOut(600);
+    $(".preloader-mask")
+      .delay(500)
+      .fadeOut(600);
 
-    setTimeout(function () {
+    setTimeout(function() {
       _this.initAnimations();
     }, 700);
 
@@ -1261,7 +1297,7 @@ Ventcamp = {
     }
   },
 
-  init: function (options) {
+  init: function(options) {
     this.options = $.extend(this.defaults, options, $("body").data());
 
     this.log("Init");
@@ -1296,7 +1332,7 @@ Ventcamp = {
   },
 };
 
-$(".navigation-item").on("click", function (event) {
+$(".navigation-item").on("click", function(event) {
   if ($("#navigation").hasClass("in")) {
     $("#navigation").removeClass("in");
   }

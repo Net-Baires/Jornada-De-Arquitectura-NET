@@ -4,10 +4,7 @@
       <div class="preloader"></div>
     </div>
 
-    <section
-      id="hero"
-      class="hero-section bg1 bg-cover window-height light-text"
-    >
+    <section id="hero" class="hero-section bg1 bg-cover window-height light-text">
       <ul class="socials-nav">
         <li class="socials-nav-item">
           <a href="https://twitter.com/netbaires" target="_blank">
@@ -32,18 +29,10 @@
         <div class="container">
           <h5 class="heading-alt" style="margin-bottom: 8px;">
             <span class="fa fa-calendar-o base-clr-txt"></span>19/20.Abril 17Hs.
-            <span
-              class="fa fa-map-marker base-clr-txt"
-              style="margin-left: 14px;"
-            ></span
-            >ONLINE
+            <span class="fa fa-map-marker base-clr-txt" style="margin-left: 14px;"></span>ONLINE
           </h5>
-          <h1 class="extra-heading" style="font-size: 60px;">
-            Jornada de Arquitectura .NET
-          </h1>
-          <h3 class="extra-heading" style="font-size: 45px;">
-            Unit Testing Everywhere
-          </h3>
+          <h1 class="extra-heading" style="font-size: 60px;">Jornada de Arquitectura .NET</h1>
+          <h3 class="extra-heading" style="font-size: 45px;">Unit Testing Everywhere</h3>
           <h6 class="thin base-font">
             Porque hacer arquitectura no es únicamente cosa de
             <strong>Arquitectos</strong>
@@ -125,9 +114,7 @@
       <div class="container">
         <span class="icon section-icon icon-multimedia-12"></span>
         <h3>Conocenos</h3>
-        <p class="text-alt">
-          Enterate todo sobre nosotros y sobre la conferencia.
-        </p>
+        <p class="text-alt">Enterate todo sobre nosotros y sobre la conferencia.</p>
         <br />
         <br />
 
@@ -164,23 +151,8 @@
               </div>
               <div class="col-sm-7 align-left">
                 <h6>Sobre nuestro evento</h6>
-                <p>
-                  Con el objetivo de acercar el concepto de arquitectura a todos
-                  los desarrolladores, esta conferencia surgió a principios del
-                  2019. Desde entonces, nos hemos focalizado, en tópicos como:
-                  DDD, Patrones de Diseño, TDD, BDD, Unit Testing, buenas
-                  practicas, Clean Architecture, entre otros. A través de
-                  workshops, actividades de networking, charlas, lightning talks
-                  y deás actividades, buscamos que todos nuestros asistentes, no
-                  solo comprendan los conceptos que transmitimos, si no que los
-                  interioricen y sepan, como, cuando y de que manera aplicarlos
-                  en cada uno de sus desarrollos.
-                </p>
-                <p>
-                  Este 2020 focalizamos todos nuestros esfuerzos en llegar a un
-                  publico mucho mas amplio y dar espacio a nuevos speakers, que
-                  puedan compartir todo su conocimiento y experiencias.
-                </p>
+                <p>Con el objetivo de acercar el concepto de arquitectura a todos los desarrolladores, esta conferencia surgió a principios del 2019. Desde entonces, nos hemos focalizado, en tópicos como: DDD, Patrones de Diseño, TDD, BDD, Unit Testing, buenas prácticas, Clean Architecture, entre otros. A través de workshops, actividades de networking, charlas, lightning talks y demás actividades, buscamos que todos nuestros asistentes, no solo comprendan los conceptos que transmitimos, si no que los interioricen y sepan, cómo, cuándo y de que manera aplicarlos en cada uno de sus desarrollos.</p>
+                <p>Este 2020 focalizamos todos nuestros esfuerzos en llegar a un público mucho más amplio y dar espacio a nuevos speakers, que puedan compartir todo su conocimiento y experiencias.</p>
               </div>
             </div>
 
@@ -207,11 +179,7 @@
               </div>
 
               <div class="col-sm-5 img-column">
-                <img
-                  src="assets/img/jornada-logo.png"
-                  alt
-                  class="img-responsive"
-                />
+                <img src="assets/img/jornada-logo.png" alt class="img-responsive" />
               </div>
             </div>
 
@@ -246,19 +214,14 @@
       </div>
     </section>
 
-    <section
-      id="counters"
-      class="section align-center overlay bg-cover bg5 light-text"
-    >
+    <section id="counters" class="section align-center overlay bg-cover bg5 light-text">
       <div class="container">
         <div class="row counters-wrapper">
           <div class="col-sm-3">
             <div class="counter-block counter-block-no-border">
               <div class="counter-box">
                 <div class="counter-content">
-                  <span class="count" data-from="0" :data-to="counter.speakers"
-                    >0</span
-                  >
+                  <span class="count" data-from="0" :data-to="counter.speakers">0</span>
 
                   <p class="title">Oradores</p>
                 </div>
@@ -270,9 +233,7 @@
             <div class="counter-block counter-block-no-border">
               <div class="counter-box">
                 <div class="counter-content">
-                  <span class="count" data-from="0" :data-to="counter.attendees"
-                    >0</span
-                  >
+                  <span class="count" data-from="0" :data-to="counter.attendees">0</span>
 
                   <p class="title">Asistentes</p>
                 </div>
@@ -284,9 +245,7 @@
             <div class="counter-block counter-block-no-border">
               <div class="counter-box">
                 <div class="counter-content">
-                  <span class="count" data-from="0" :data-to="counter.editions"
-                    >0</span
-                  >
+                  <span class="count" data-from="0" :data-to="counter.editions">0</span>
 
                   <p class="title">Ediciones</p>
                 </div>
@@ -298,9 +257,7 @@
             <div class="counter-block counter-block-no-border">
               <div class="counter-box">
                 <div class="counter-content">
-                  <span class="count" data-from="0" :data-to="counter.sponsors"
-                    >0</span
-                  >
+                  <span class="count" data-from="0" :data-to="counter.sponsors">0</span>
 
                   <p class="title">Sponsors</p>
                 </div>
@@ -322,11 +279,7 @@
         <br />
         <br />
         <div v-if="speakers.enableList">
-          <div
-            v-for="speaker in speakers.list"
-            v-bind:key="speaker"
-            class="col-sm-4"
-          >
+          <div v-for="speaker in speakers.list" v-bind:key="speaker" class="col-sm-4">
             <div class="speaker">
               <div class="photo-wrapper rounded">
                 <img
@@ -365,17 +318,12 @@
             :href="speakers.talk.url"
             target="_blank"
             class="btn btn-outline-clr btn-md"
-            >{{ speakers.talk.text }}</a
-          >
+          >{{ speakers.talk.text }}</a>
         </div>
       </div>
     </section>
 
-    <section
-      v-if="schedule.enable"
-      id="schedule"
-      class="section schedule-section align-center"
-    >
+    <section v-if="schedule.enable" id="schedule" class="section schedule-section align-center">
       <div class="container">
         <span class="icon section-icon icon-office-21"></span>
         <h3>Agenda</h3>
@@ -422,8 +370,7 @@
                     v-if="track != null"
                     :href="'#day' + indexDay + '_auditorium' + indexTrack"
                     data-toggle="tab"
-                    >{{ track.title }}</a
-                  >
+                  >{{ track.title }}</a>
                 </li>
               </ul>
               <!-- Second level content start -->
@@ -503,9 +450,11 @@
                       >
                         <article>
                           <p class="description">{{ lecture.description }}</p>
-                          <strong class="highlight speaker-name">{{
+                          <strong class="highlight speaker-name">
+                            {{
                             lecture.speaker
-                          }}</strong>
+                            }}
+                          </strong>
                         </article>
                       </div>
                     </div>
@@ -539,21 +488,13 @@
             </a>
 
             <div class="modal-window" data-modal="gallery-1">
-              <div
-                class="modal-box medium animated"
-                data-animation="zoomIn"
-                data-duration="700"
-              >
+              <div class="modal-box medium animated" data-animation="zoomIn" data-duration="700">
                 <span class="close-btn icon icon-office-52"></span>
 
                 <h5 class="heading-alt">{{ event.alt }}</h5>
                 <br />
 
-                <img
-                  :src="event.image"
-                  :alt="event.alt"
-                  class="full-width-img"
-                />
+                <img :src="event.image" :alt="event.alt" class="full-width-img" />
               </div>
             </div>
           </span>
@@ -561,10 +502,7 @@
       </div>
     </section>
 
-    <section
-      id="register"
-      class="section overlay overlay-clr bg-cover bg4 light-text align-center"
-    >
+    <section id="register" class="section overlay overlay-clr bg-cover bg4 light-text align-center">
       <div class="container">
         <h2>Contanos tu ideas</h2>
         <p>
@@ -576,9 +514,11 @@
         <br />
         <br />
 
-        <a :href="tellAboutYourself.url" class="btn btn-lg btn-outline">{{
+        <a :href="tellAboutYourself.url" class="btn btn-lg btn-outline">
+          {{
           tellAboutYourself.text
-        }}</a>
+          }}
+        </a>
       </div>
     </section>
 
@@ -608,19 +548,17 @@
             class="sponsor inline"
           >
             <a :href="sponsor.url">
-              <img
-                style="width: 175px;"
-                :src="sponsor.image"
-                :alt="sponsor.alt"
-              />
+              <img style="width: 175px;" :src="sponsor.image" :alt="sponsor.alt" />
             </a>
           </div>
         </div>
 
         <div class="row btns-block">
-          <a :href="sponsors.becomeInSponsor.url" class="btn">{{
+          <a :href="sponsors.becomeInSponsor.url" class="btn">
+            {{
             sponsors.becomeInSponsor.text
-          }}</a>
+            }}
+          </a>
         </div>
       </div>
     </section>
@@ -636,7 +574,9 @@
             <p class="text-alt">
               <small>
                 Somos la comunidad de desarrolladores mas grande toda la
-                <span class="highlight">Argentina</span>. Nuestro objetivo es el
+                <span
+                  class="highlight"
+                >Argentina</span>. Nuestro objetivo es el
                 de poner el conocimiento al acance de todos. Para lograrlo
                 llevamos adelante conferencias, meetup, workshop, encuentros
                 online, etc. No dudes en proponer tus ideas para ayudarnos a
@@ -776,13 +716,13 @@ export default {
   data: function() {
     return {
       register: {
-        url: "/coming-soon",
+        url: "/coming-soon"
       },
       speakers: {
         talk: {
           text: "Propone tu charla",
           url: "https://sessionize.com/4-jornada-de-arquitectura-net/",
-          enable: true,
+          enable: true
         },
         enableList: true,
         list: [
@@ -794,54 +734,54 @@ export default {
             twitter: "germankuber",
             github: "germankuber",
             linkedin: "germankuber",
-            photo: "german-kuber.png",
-          },
-        ],
+            photo: "german-kuber.png"
+          }
+        ]
       },
       counter: {
         speakers: 13,
         attendees: 300,
         editions: 3,
-        sponsors: 10,
+        sponsors: 10
       },
 
       previousEvents: [
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/1.jpg",
+          image: "assets/img/events/previous/1.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/2.jpg",
+          image: "assets/img/events/previous/2.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/3.jpg",
+          image: "assets/img/events/previous/3.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/4.jpg",
+          image: "assets/img/events/previous/4.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/5.jpg",
+          image: "assets/img/events/previous/5.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/6.jpg",
+          image: "assets/img/events/previous/6.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/7.jpg",
+          image: "assets/img/events/previous/7.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/8.jpg",
+          image: "assets/img/events/previous/8.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/9.jpg",
-        },
+          image: "assets/img/events/previous/9.jpg"
+        }
       ],
       sponsors: {
         bigger: [
@@ -849,39 +789,45 @@ export default {
             name: "Hexacta",
             image: "assets/img/sponsors/hexacta.jpg",
             alt: "",
-            url: "https://www.hexacta.com/",
+            url: "https://www.hexacta.com/"
           },
           {
             name: "Cognizant Softvision",
             image: "assets/img/sponsors/softvision.png",
             alt:
               "Somos una compañía global con más de 20 años de experiencia en el mundo digital diseñando y construyendo productos innovadores y soluciones disruptivas para clientes internacionales.",
-            url: "https://www.cognizantsoftvision.com/",
-          },
+            url: "https://www.cognizantsoftvision.com/"
+          }
         ],
         smaller: [
+          {
+            name: "CloudX",
+            image: "assets/img/sponsors/cloudx.png",
+            alt: "CloudX.",
+            url: "https://www.cloudx.com/"
+          },
           {
             name: "Microsoft User Group",
             image: "assets/img/sponsors/mug.png",
             alt: "Microsoft User Group",
-            url: "https://mug-it.org.ar",
+            url: "https://mug-it.org.ar"
           },
           {
             name: "Globalogic",
             image: "assets/img/sponsors/globalogic.png",
             alt:
               "En GlobalLogic creamos productos digitales combinando nuestra experiencia en diseño e ingeniería compleja para ayudar a nuestros clientes a imaginar lo imposible y acelerar su transición a los negocios digitales del futuro.",
-            url: "https://www.globallogic.com/latam/",
-          },
+            url: "https://www.globallogic.com/latam/"
+          }
         ],
         becomeInSponsor: {
           text: "Convertite en Sponsor",
-          url: "mailto: info@net-baires.com.ar",
-        },
+          url: "mailto: info@net-baires.com.ar"
+        }
       },
       tellAboutYourself: {
         text: "Contanos sobre vos",
-        url: "mailto: info@net-baires.com.ar",
+        url: "mailto: info@net-baires.com.ar"
       },
       schedule: {
         enable: false,
@@ -889,7 +835,7 @@ export default {
           {
             day: {
               title: "Día 1",
-              date: "8/9/2019",
+              date: "8/9/2019"
             },
             tracks: [
               {
@@ -901,9 +847,9 @@ export default {
                     title: "Introducción 1 1",
                     speaker: "Germán Küber",
                     description: "Primera charla de presentación",
-                    photo: "german-kuber.png",
-                  },
-                ],
+                    photo: "german-kuber.png"
+                  }
+                ]
               },
               {
                 title: "Sala 2",
@@ -914,15 +860,15 @@ export default {
                     title: "Introducción 2 1",
                     speaker: "Germán Küber",
                     description: "Primera charla de presentación",
-                    photo: "german-kuber.png",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
+                    photo: "german-kuber.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     };
-  },
+  }
 };
 </script>

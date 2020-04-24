@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
 import Home from "../views/Home.vue";
 import ComingSoon from "../views/ComingSoon.vue";
+import Live from "../views/Live.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: "/coming-soon",
     name: "ComingSoon",
     component: ComingSoon,
+  },
+  {
+    path: "/live",
+    name: "Live",
+    component: Live,
   },
   {
     path: "/about",

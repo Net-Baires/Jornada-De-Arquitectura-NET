@@ -9,7 +9,7 @@ export const Config = {
   },
   register: {
     url:
-      "https://www.eventbrite.com.ar/e/jornada-de-arquitectura-net-unit-testing-everywhere-2-dias-tickets-102989662854",
+      "https://www.eventbrite.com.ar/e/jornada-de-arquitectura-net-unit-testing-everywhere-2-dias-tickets-103651012970",
   },
   speakers: ConfigSpeakers,
   counter: {

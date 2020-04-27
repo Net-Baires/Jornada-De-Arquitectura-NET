@@ -13,7 +13,6 @@ jobs:
           node-version: 12.x
       - run: npm install
       - run: npm run build --if-present
-      - uses: actions/checkout@v1
       - name: git-ftp push
         uses: sebastianpopp/git-ftp-action@releases/v3
         with:

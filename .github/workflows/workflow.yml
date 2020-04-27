@@ -19,9 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm install
     - run: npm run build --if-present
-    - run: npm test
-      env:
-        CI: true
+
    - uses: actions/checkout@v1
     - name: git-ftp push
       uses: sebastianpopp/git-ftp-action@releases/v3

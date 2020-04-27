@@ -13,11 +13,10 @@ jobs:
           node-version: 12.x
       - run: npm install
       - run: npm run build
-      - uses: actions/checkout@v2
       - name: Upload ftp
         uses: sebastianpopp/ftp-action@releases/v2
         with:
           host: ${{ secrets.FTP_SERVER }}
-            user: ${{ secrets.FTP_USERNAME }}
-            password: ${{ secrets.FTP_PASSWORD }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           localDir: "dist"

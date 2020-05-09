@@ -859,7 +859,7 @@ Ventcamp = {
   countdownInit: function() {
     if ($(".countdown").length) {
       if (typeof $.fn.countdown == "function") {
-        const futureDate = new Date(2020, 4, 10, 12, 0, 0);
+        const futureDate = new Date(2020, 5, 18, 16, 0, 0);
         $countdown = $(".countdown");
 
         // count down 10 days from today

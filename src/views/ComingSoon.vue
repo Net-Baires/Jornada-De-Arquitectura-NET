@@ -4,12 +4,13 @@
       <div class="preloader"></div>
     </div>
 
-    <section
-      class="hero-section bg4 bg-cover comming-soon window-height light-text overlay"
-    >
+    <section class="hero-section bg4 bg-cover comming-soon window-height light-text overlay">
       <div class="heading-block centered-block align-center">
         <div class="container">
-          <h1>Jornada de Arquitectura <span class="highlight">.NET</span></h1>
+          <h1>
+            Jornada de Arquitectura
+            <span class="highlight">.NET</span>
+          </h1>
           <div class="row counters-wrapper countdown">
             <div class="counter-block counter-block-solid">
               <div class="counter-box">
@@ -69,12 +70,12 @@
                 class="btn btn-sm btn-outline-clr"
               />
             </fieldset>
-          </form> -->
+          </form>-->
 
-          <h5>
+          <!-- <h5>
             Muy pronto abriremos la inscripción para la
             <span class="highlight">4º edición</span>
-          </h5>
+          </h5>-->
         </div>
       </div>
     </section>
@@ -88,13 +89,13 @@ export default {
   data: function() {
     return {
       register: {
-        url: "http://jornadadearquitectura.net/coming-soon.html",
+        url: "http://jornadadearquitectura.net/coming-soon.html"
       },
       speakers: {
         talk: {
           text: "Propone tu charla",
           url: "https://sessionize.com/4-jornada-de-arquitectura-net/",
-          enable: true,
+          enable: true
         },
         enableList: true,
         list: [
@@ -106,54 +107,54 @@ export default {
             twitter: "germankuber",
             github: "germankuber",
             linkedin: "germankuber",
-            photo: "german-kuber.png",
-          },
-        ],
+            photo: "german-kuber.png"
+          }
+        ]
       },
       counter: {
         speakers: 13,
         attendees: 300,
         editions: 3,
-        sponsors: 10,
+        sponsors: 10
       },
 
       previousEvents: [
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/1.jpg",
+          image: "assets/img/events/previous/1.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/2.jpg",
+          image: "assets/img/events/previous/2.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/3.jpg",
+          image: "assets/img/events/previous/3.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/4.jpg",
+          image: "assets/img/events/previous/4.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/5.jpg",
+          image: "assets/img/events/previous/5.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/6.jpg",
+          image: "assets/img/events/previous/6.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/7.jpg",
+          image: "assets/img/events/previous/7.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/8.jpg",
+          image: "assets/img/events/previous/8.jpg"
         },
         {
           alt: "Segunda Jornada de Arquitectura .NET - Accenture Argentina",
-          image: "assets/img/events/previous/9.jpg",
-        },
+          image: "assets/img/events/previous/9.jpg"
+        }
       ],
       sponsors: {
         bigger: [
@@ -161,39 +162,39 @@ export default {
             name: "Hexacta",
             image: "assets/img/sponsors/hexacta.jpg",
             alt: "",
-            url: "https://www.hexacta.com/",
+            url: "https://www.hexacta.com/"
           },
           {
             name: "Cognizant Softvision",
             image: "assets/img/sponsors/softvision.png",
             alt:
               "Somos una compañía global con más de 20 años de experiencia en el mundo digital diseñando y construyendo productos innovadores y soluciones disruptivas para clientes internacionales.",
-            url: "https://www.cognizantsoftvision.com/",
-          },
+            url: "https://www.cognizantsoftvision.com/"
+          }
         ],
         smaller: [
           {
             name: "Microsoft User Group",
             image: "assets/img/sponsors/mug.png",
             alt: "Microsoft User Group",
-            url: "https://mug-it.org.ar",
+            url: "https://mug-it.org.ar"
           },
           {
             name: "Globalogic",
             image: "assets/img/sponsors/globalogic.png",
             alt:
               "En GlobalLogic creamos productos digitales combinando nuestra experiencia en diseño e ingeniería compleja para ayudar a nuestros clientes a imaginar lo imposible y acelerar su transición a los negocios digitales del futuro.",
-            url: "https://www.globallogic.com/latam/",
-          },
+            url: "https://www.globallogic.com/latam/"
+          }
         ],
         becomeInSponsor: {
           text: "Convertite en Sponsor",
-          url: "mailto: info@net-baires.com.ar",
-        },
+          url: "mailto: info@net-baires.com.ar"
+        }
       },
       tellAboutYourself: {
         text: "Contanos sobre vos",
-        url: "mailto: info@net-baires.com.ar",
+        url: "mailto: info@net-baires.com.ar"
       },
       schedule: {
         enable: false,
@@ -201,7 +202,7 @@ export default {
           {
             day: {
               title: "Día 1",
-              date: "8/9/2019",
+              date: "8/9/2019"
             },
             tracks: [
               {
@@ -213,9 +214,9 @@ export default {
                     title: "Introducción 1 1",
                     speaker: "Germán Küber",
                     description: "Primera charla de presentación",
-                    photo: "german-kuber.png",
-                  },
-                ],
+                    photo: "german-kuber.png"
+                  }
+                ]
               },
               {
                 title: "Sala 2",
@@ -226,15 +227,15 @@ export default {
                     title: "Introducción 2 1",
                     speaker: "Germán Küber",
                     description: "Primera charla de presentación",
-                    photo: "german-kuber.png",
-                  },
-                ],
-              },
-            ],
-          },
-        ],
-      },
+                    photo: "german-kuber.png"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     };
-  },
+  }
 };
 </script>

@@ -19,8 +19,8 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: "/live",
-    name: "Live",
-    component: Live,
+    name: "ComingSoon",
+    component: ComingSoon,
   },
   {
     path: "/about",

@@ -314,7 +314,12 @@
         <br />
         <br />
         <div v-if="speakers.enableList">
-          <div v-for="speaker in speakers.list" v-bind:key="speaker" class="col-sm-4">
+          <div
+            v-for="speaker in speakers.list"
+            v-bind:key="speaker"
+            style="height:500px"
+            class="col-sm-4"
+          >
             <div class="speaker">
               <div class="photo-wrapper rounded">
                 <img
@@ -327,21 +332,21 @@
               <p class="text-alt">
                 <small>{{ speaker.position }}</small>
               </p>
-              <p class="about">{{ speaker.description }}</p>
+              <p style="height:130px" class="about">{{ speaker.description| truncate(150, '...') }}</p>
               <ul class="speaker-socials">
-                <li>
-                  <a :href="speaker.name">
-                    <span class="fa fa-facebook"></span>
+                <li v-if="speaker.linkedin">
+                  <a :href="`https://linkedin.com/${speaker.linkedin}`">
+                    <span class="fa fa-linkedin"></span>
                   </a>
                 </li>
-                <li>
-                  <a :href="'https://twitter.com/' + speaker.twitter">
+                <li v-if="speaker.twitter">
+                  <a :href="`https://twitter.com/${speaker.twitter}`">
                     <span class="fa fa-twitter"></span>
                   </a>
                 </li>
-                <li>
-                  <a href="#">
-                    <span class="fa fa-google-plus"></span>
+                <li v-if="speaker.github">
+                  <a :href="`https://github.com/${speaker.github}`">
+                    <span class="fa fa-github"></span>
                   </a>
                 </li>
               </ul>
@@ -481,7 +486,7 @@
                             '_time' +
                             indexLecture
                         "
-                        class="panel-collapse schedule-item-body collapsed collapse"
+                        class="panel-collapse schedule-item-body"
                       >
                         <article>
                           <p class="description">{{ lecture.description }}</p>
@@ -750,6 +755,15 @@ export default {
   name: "Home",
   data: function() {
     return Config;
+  },
+  filters: {
+    truncate: function(text, length, suffix) {
+      if (text.length > length) {
+        return text.substring(0, length) + suffix;
+      } else {
+        return text;
+      }
+    }
   }
 };
 </script>

@@ -22,6 +22,12 @@ export const ConfigSponsors = {
   ],
   smaller: [
     {
+      name: "Educación IT",
+      image: "assets/img/sponsors/educacionit.png",
+      alt: "Educación IT.",
+      url: "https://www.educacionit.com/",
+    },
+    {
       name: "CloudX",
       image: "assets/img/sponsors/cloudx.png",
       alt: "CloudX.",

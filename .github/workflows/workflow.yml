@@ -21,6 +21,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@3.1.0
         with:
           local-dir: build
-          ftp-server: ftp://ftp.germankuber.com.ar
+          ftp-server: ftp://germankuber.com.ar
           ftp-username: Admin@jornadadearquitectura.net
           ftp-password: ${{ secrets.FTP_PASSWORD }}

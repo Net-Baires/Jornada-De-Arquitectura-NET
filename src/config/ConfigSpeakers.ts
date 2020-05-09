@@ -33,9 +33,9 @@ export const ConfigSpeakers = {
       position: "Mulesoft, Tech Lead",
       description:
         `Además de desempeñarme como Architect y TL en varias companias, soy profesor de Patrones de Sedeño, UML, Ingeniería de software y C#`,
-      twitter: "germankuber",
-      github: "germankuber",
-      linkedin: "germankuber",
+      twitter: "",
+      github: "",
+      linkedin: "",
       photo: "Diego_Camacho.jpg",
     },
     {
@@ -108,9 +108,9 @@ export const ConfigSpeakers = {
         Actualmente viviendo en EU trabajando como Developer Senior para una compañía consultora con gran índice proyectos para el Gobierno de California.
         Early Adopter de productos tecnológicos. “Insider” de todo lo relacionado a Ms. Windows 10, Visual Studio, Visual Studio Code, Office, Xbox, Edge Chromium, etc, todo en versión insider.
         `,
-      twitter: "",
-      github: "",
-      linkedin: "",
+      twitter: "KodiakMx",
+      github: "KodiakMx",
+      linkedin: "jorgeelevy",
       photo: "Jorge_Levy.jpg",
     },
 

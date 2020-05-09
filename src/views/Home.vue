@@ -324,7 +324,7 @@
               <div class="photo-wrapper rounded">
                 <img
                   :src="'assets/img/speakers/' + speaker.photo"
-                  alt="Germán Küber"
+                  :alt="speaker.name"
                   class="img-responsive"
                 />
               </div>
@@ -335,7 +335,7 @@
               <p style="height:130px" class="about">{{ speaker.description| truncate(150, '...') }}</p>
               <ul class="speaker-socials">
                 <li v-if="speaker.linkedin">
-                  <a :href="`https://linkedin.com/${speaker.linkedin}`">
+                  <a :href="`https://linkedin.com/in/${speaker.linkedin}`">
                     <span class="fa fa-linkedin"></span>
                   </a>
                 </li>

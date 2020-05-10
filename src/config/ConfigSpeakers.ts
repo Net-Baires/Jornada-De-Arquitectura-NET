@@ -84,7 +84,7 @@ export const ConfigSpeakers = {
       name: "Fernando Sonego",
       position: "Software Solution Architect en Algeiba S.A.",
       description:
-        "MVP Developer Technologies",
+        "Soy Arquitecto de Software en Algeiba dev, una empresa de origen Argentino, y junto con un increíble equipo de trabajo desarrollamos soluciones para todo el mundo. Tengo una amplia experiencia en desarrollo de aplicaciones distribuidas, software en la nube y útimas tecnologías Microsoft .Net y .Net Core.",
       twitter: "FernandoSonego",
       github: "fsonego",
       linkedin: "fernandosonego",

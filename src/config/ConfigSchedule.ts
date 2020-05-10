@@ -68,7 +68,8 @@ export const ConfigSchedule = {
               time: "16:00 PM",
               title: "Entity Framewor Core Unit testing",
               speaker: "Facundo La Roca",
-              description: "In this talk we will learn how te implement Unit and Integration testing for Entity Framework Core using SQLite and mocking",
+              description: `Durante mucho tiempo hemos escuchado que para poder testear nuestros repositorios utilizando Entity Framework Core teníamos que utilizar una base de datos real, por ende solo podíamos escribir Tests de Integración.
+              En esta charla te voy a contar como escribir tests unitarios con Entity Framework Core aprovechando la simpleza de SQLite.`,
               photo: "Facundo_La_Rocca.jpg",
             },
             {
